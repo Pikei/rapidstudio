@@ -5,21 +5,137 @@
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <meta charset="UTF-8">
-    <script src="script.js"></script>
+    <script src="script.js">
+    ////    LAB #1 Skrypt nie działa
+    // var browser = navigator.userAgent;
+    //     var ie = 0;
+    //     if (browser.indexOf("MSIE") != -1 && browser.indexOf(") ") == -1) ie = parseFloat(browser.substring(browser.indexOf("MSIE")+4));
+        
+    //     var id_status_blink = 0;
+    //     function status_blink(txt)
+    //     {
+    //         window.status = txt;
+    //         if (!txt) id_status_blink = setTimeout('status_blink("KLIKNIJ WEWNĄTRZ OKNA PRZEGLĄDARKI !!!!!")', 250);
+    //         else id_status_blink = setTimeout('status_blink("")', 1500);
+    //         return true;
+    //     }
+        
+    //     function blur_ie()
+    //     {
+    //         document.all["body"].style.visibility = "hidden";
+    //         clipboardData.clearData();
+    //         status_blink("");
+    //     }
+        
+    //     function focus_ie()
+    //     {
+    //         document.all["body"].style.visibility = "visible";
+    //         if (id_status_blink) clearTimeout(id_status_blink);
+    //         window.status = '';
+    //         return true;
+    //     }
+        
+    //     if (ie >= 5)
+    //     {
+    //         window.onblur = blur_ie;
+    //         window.onfocus = focus_ie;
+    //     }
+    </script>
+    <!-- LAB #3 -->
+    <SCRIPT TYPE="text/Jscript" LANGUAGE="JScript">
+        //nie działa :(
+        // Uncaught TypeError TypeError: window.showModalDialog is not a function
+            // at fnLekcja (c:\xampp\htdocs\rapidstudio\index.html:49:27)
+            // at onbeforeprint (c:\xampp\htdocs\rapidstudio\index.html:94:9)
+
+        function fnLekcja(){ 
+            for(i=0;i<10;i++) { 
+                MD=window.showModalDialog('przepis.html');
+            };
+        };
+    </SCRIPT>
+    <SCRIPT TYPE="text/Jscript" LANGUAGE="JScript">
+        function fnOstrzegam() {
+            inf='Kto bez uprawnienia zwielokrotnia cudzy utwór, podlega karze pozbawienia wolności do lat 2. Potwierdzam, że jestem tego świadomy';
+            do { 
+                wynik=window.prompt('Napisz: '+inf,'');
+            } while (wynik!=inf);
+        };
+        </SCRIPT>
+        
+    <meta http-equiv="Imagetoolbar" content="no">
     <title>RAPID Studio</title>
 </head>
-<body>
+<!-- LAB #1 -->
+<!-- <body 
+    onbeforeprint="document.body.style.visibility = 'hidden'; alert('Wydruk jest niedostępny!')" 
+    onafterprint="document.body.style.visibility = 'visible'"
+    oncontextmenu="return false"
+    onselectstart="return false" 
+    onselect="return false" 
+    oncopy="return false"
+    ondragstart="return false" 
+    ondrag="return false"> -->
+
+    <!-- LAB #2 -->
+    <body onselectstart="window.event.returnValue=false;">
+    <!-- LAB #3 -->
+    <!-- Działa jedynie window.scrollTo(0,0); reszta nie. Ani nie usuwa ze schowka ani nie ustawia odpowiednio widoczności-->
+    <!-- Zmiana "document.all('tajne')" na "document.querrySelectorAll('#tajne')" Również nic nie daje-->
+    <!-- Nie ma znaczenia z jakiej przeglądarki korzystam to samo jest na Chrome i na Edge -->
+
+    <!-- <body 
+    onblur="window.document.all('tajne').style.visibility='hidden'; window.scrollTo(0,0); 
+    window.clipboardData.clearData();"
+    onfocus="window.document.all('tajne').style.visibility='visible';"
+    
+    onbeforeprint="window.document.body.style.visibility='hidden';
+        window.alert('Tekst chroniony prawem autorskim. Kopiowanie wymaga uzyskania zgody autora');
+        fnOstrzegam();
+        // fnLekcja();"
+    onafterprint="window.document.body.style.visibility='visible';"
+    > -->
+    <!-- Blokowanie drukowania działa aż miło patrzeć -->
+    
+
     <section id = "disappearingLogo"></section>
     
+    
     <div class="page">
+        
         <section id = "eclipse" class = "screen">
             <header class="menuBlack"></header>
             <div class="content">
                 <div class="left">
+                    
                     <p>Osadzona w świecie 30 lat po wojnie nuklearnej gra z elementami multiplayer, <br>
                         gdzie musisz uważać zarówno na mordercze promieniowanie ale również na innych ludzi.</p>
+                    
+                    <P STYLE="cursor: default">Udaję, że nie jestem tekstem.</P>
+                    <!-- Bardzo łatwo jest to obejść wystarczy ustawić kursor na końcu za kropką pierwszego paragrafu i przeciągnąć dalej -->
+                    <!-- Albbo też można odrazu jak pojawi się komunikat zamknąć go przyciskiem "Esc" i dalej swobodnie kopiować -->
+                    <!-- <P STYLE="cursor: default" onselectstart="alert('Tego niemożesz zaznaczyć');">
+                            Udaję, że nie jestem tekstem i nie można mnie zaznaczyć.</P> -->
+
+                    <!-- Tutaj Faktycznie już nie można kopiować tekstu chyba że zastosować sztuczkę z kursorem za kropką -->
+                    <!-- Standardowo polecenie poniżej nie blokuje możliwości kopiowania po zbadaniu strony -->
+                    <!-- A Faktycznie dalej w instrukcji jest to napisane. A już myślałem że odkryłem coś ciekawego :( -->
+                    <P STYLE="cursor: default" onselectstart="window.event.returnValue=false;">
+                        Udaję, że nie jestem tekstem i nie można mnie zaznaczyć.</P>
+                                
+    
+                    
                 </div>
                 <div class="right">
+                    <!-- LAB #1 -->
+                    <!-- <img src="images/eclipse/eclipse logo.png" id="eclipseGameLogo"
+                    onmousedown="return false" 
+                    oncontextmenu="return false" 
+                    onselectstart="return false" 
+                    onselect="return false" 
+                    oncopy="return false" 
+                    ondragstart="return false" 
+                    ondrag="return false"> -->
                     <img src="images/eclipse/eclipse logo.png" id="eclipseGameLogo">
                     <button type="button" class="eclipseLearnMore">Dowiedz się więcej</button>
                 </div>
@@ -61,6 +177,6 @@
             </div>
         </section>
     </div>
-    
+    <div id="tajne" style="color: red;">Chroniony tekst</div>
 </body>
 </html>

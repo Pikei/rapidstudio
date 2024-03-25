@@ -8,7 +8,9 @@
     <script src="script.js"></script>
     <title>Kariera</title>
 </head>
-<body>
+<!-- LAB #2 -->
+<!-- Działa elegancko  -->
+<body onselectstart="window.event.returnValue=false;">
     <section id = "disappearingLogo"></section>
     
     <div class="page">
@@ -32,7 +34,7 @@
             <header class="menuBlack"></header>
             <div class="content">
                 <h1>Bądź na bieżąco</h1>
-                <form>
+                <form onselectstart="window.event.cancelBubble=true;">
                     <input type="text" name="firstName" id="firstName" placeholder="Imię">
                     <input type="text" name="secondName" id="secondName" placeholder="Nazwisko">
                     <input type="text" name="email" id="email" placeholder="E-mail">

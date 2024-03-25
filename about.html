@@ -6,13 +6,26 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <meta charset="UTF-8">
     <script src="script.js"></script>
+    <!-- Okej więc Jeśli zakomentuję linię powyżej i odkomentuję skrypt poniżej oraz sekcję #disappearingLogo coś się dzieje ... ale... -->
+    <!-- To za dużo żeby powiedzieć że blokuje stronę. Pdejrzeć nadal mogę jak mogłem jedynie przy zapisie strony do pliku pojawia się jakiś komunikat -->
+    <!-- Widać że skrypt coś robi ale nie działa chyba tak jak powinien -->
+    <!-- <SCRIPT TYPE="text/Jscript" LANGUAGE="JScript">
+        var t=' Wyt metśkic eokelnj oywtspęjucą enzka ioztsła yazimneoienp rama i  -apzrsyetz n eiapzrsyytim .oPswat łetsk trtduynd  odozctynaai , aabdrozł taywd  odookodawin.aS rkpy tamp zr yyt mpsro ąazelęt- j se tysemrtcynz.yP dotswap doz  imneąnt t ketsj wayn ,rucuoh mksyrtp ,kspoui jezs rtno yywin kejogd izłanaai(  etsk tazzsfyorawyn ) ikwel jodz imneen j t wokzdeis rtno.yB<>RwUga:ap  maęiat,jż  erpezlgdąraikn eiw śyiwtealąjn eitkrócy hnzkawó , aikkl apscaijw  syętupąjychcp  oosib eazimneaiąjn  aejnd.ąD aletogp zrdes yzrfwonaei mbojeim  jksyrtpz anzcinakim& tlP;ERg&;t<.RBT>nes rkpy tejtst lyokp  goąlodyw mrpyzłkdamei w t kap ortsjef roim eomeżn eis rpwazdćis ęiw p artkcynzcy  haztssowonaaihc.';
+        var dlt=t.length;
+        for (i=1;i<=dlt;i+=2)
+        { window.document.write(t.charAt(i));
+          window.document.write(t.charAt(i-1));
+        };
+        </SCRIPT> -->
+        
     <title>RAPID Team</title>
 </head>
+<!-- LAB #2 -->
 <body>
-    <section id = "disappearingLogo"></section>
+    <!-- <section id = "disappearingLogo"></section> -->
     
     <div class="page">
-        <section id="rapidTeam" class = "screen">
+        <section id="rapidTeam" class = "screen" oncopy="window.event.returnValue=false;">
             <header class="menuWhite"></header>
             <div class="content">
                 <img src="images/rapid/rapid icon.png">
@@ -37,7 +50,10 @@
             </div>
         </section>
 
-        <section id="rapidGames" class = "screen">
+        <section id="rapidGames" class = "screen"
+        STYLE="visibility: hidden;"
+        oncopy="window.event.returnValue=false;"
+        onload="window.document.body.style.visibility='visible';">
             <header class="menuBlack"></header>
             <div class="content">
                 <div id="left">
